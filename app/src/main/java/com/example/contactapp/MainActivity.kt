@@ -2,6 +2,10 @@ package com.example.contactapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.random.Random
@@ -50,10 +54,34 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.item1 ->{
+                showToast("Exibindo item do menu 1")
+                true
+            }
+            R.id.item2 ->{
+                showToast("Exibindo item do menu 2")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     private fun randomPhone(): String {
         val ddd = Random.nextInt(10,99)
         val part1 = Random.nextInt(1000,9999)
         val part2 = Random.nextInt(1000,9999)
         return "($ddd)9$part1-$part2"
+    }
+
+    private fun showToast(msg:String){
+        Toast.makeText(this, msg,Toast.LENGTH_SHORT).show()
     }
 }
