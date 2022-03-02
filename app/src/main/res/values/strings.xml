@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ContactApp</string>
+    <string name="foto_do_contato">Foto do contato</string>
 </resources>
