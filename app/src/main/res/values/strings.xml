@@ -6,4 +6,6 @@
 
     <string name="open_drawer">Abrir</string>
     <string name="close_drawer">Fechar</string>
+    <string name="nome_do_contato">Nome do Contato</string>
+    <string name="genericPhone">(00)00000-0000</string>
 </resources>
